@@ -1,4 +1,5 @@
 import { RouteRecordRaw } from 'vue-router';
+import { guestRoutes } from 'pages/guest/routes';
 
 const routes: RouteRecordRaw[] = [
   {
@@ -6,6 +7,7 @@ const routes: RouteRecordRaw[] = [
     component: () => import('layouts/MainLayout.vue'),
     children: [{ path: '', component: () => import('pages/IndexPage.vue') }],
   },
+  ...guestRoutes,
 
   // Always leave this as last one,
   // but you can also remove it
